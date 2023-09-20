@@ -1,15 +1,15 @@
 import React from "react";
-import style from "./Navbar.module.scss";
+import styles from "./Navbar.module.scss";
 
 import { logo, user, search, favourite, cart } from "../../images";
 
 const Navbar = () => {
   return (
-    <nav className={style.Navbar}>
-      <div className={style.navLogoContainer}>
+    <nav className={styles.Navbar}>
+      <div className={styles.navLogoContainer}>
         <img src={logo.src} alt="" />
       </div>
-      <div className={style.navLinksContainer}>
+      <div className={styles.navLinksContainer}>
         <a href="/">
           <span>Home</span>
         </a>
@@ -23,7 +23,7 @@ const Navbar = () => {
           <span>Contact</span>
         </a>
       </div>
-      <div className={style.navIconsContainer}>
+      <div className={styles.navIconsContainer}>
         <button>
           <img src={user.src} alt="" />
         </button>
