@@ -4,6 +4,9 @@ export { default as user } from "./images/user.svg";
 export { default as search } from "./images/search.svg";
 export { default as favourite } from "./images/favourite.svg";
 export { default as cart } from "./images/cart.svg";
+export { default as share } from "./images/share.svg";
+export { default as compare } from "./images/compare.svg";
+export { default as like } from "./images/like.svg";
 //categories
 export { default as Bedroom } from "./images/bedroom.png";
 export { default as Dining } from "./images/dining.png";

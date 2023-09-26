@@ -2,9 +2,20 @@ import { Inter } from "next/font/google";
 import { StaticImageData } from "next/image";
 import styles from "@/styles/Home.module.scss";
 import { hero_image, Bedroom, Dining, Living } from "../images.js";
+import {
+  grifo,
+  leviosa,
+  lolito,
+  muggo,
+  pingky,
+  potty,
+  respira,
+  syltherin,
+} from "../images.js";
 import Navbar from "../components/Navbar/Navbar.tsx";
 import Footer from "../components/Footer/Footer.tsx";
 import BrowseComponent from "@/components/BrowseComponent/BrowseComponent.tsx";
+import ProductCard from "@/components/ProductCard/ProductCard.tsx";
 
 export default function Home() {
   type Category = {
@@ -13,21 +24,102 @@ export default function Home() {
     image: StaticImageData;
   }[];
 
+  type Product = {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    image: StaticImageData;
+    discount?: number | undefined;
+    isNew: boolean;
+  }[];
+
   const categories: Category = [
     {
-      id: 1,
+      id: 0,
       name: "Dining",
       image: Dining,
     },
     {
-      id: 2,
+      id: 1,
       name: "Living",
       image: Living,
     },
     {
-      id: 3,
+      id: 2,
       name: "Bedroom",
       image: Bedroom,
+    },
+  ];
+
+  const products: Product = [
+    {
+      id: 0,
+      name: "Syltherine",
+      description: "Stylish cafe chair",
+      price: 160,
+      image: syltherin,
+      discount: 50,
+      isNew: false,
+    },
+    {
+      id: 1,
+      name: "Leviosa",
+      description: "Stylish cafe chair",
+      price: 160,
+      image: leviosa,
+      isNew: true,
+    },
+    {
+      id: 2,
+      name: "Lolito",
+      description: "Luxury big sofa",
+      price: 350,
+      image: lolito,
+      discount: 30,
+      isNew: false,
+    },
+    {
+      id: 3,
+      name: "Grifo",
+      description: "Luxury big sofa",
+      price: 40,
+      image: grifo,
+      isNew: true,
+    },
+    {
+      id: 4,
+      name: "Muggo",
+      description: "Luxury big sofa",
+      price: 100,
+      image: muggo,
+      discount: 30,
+      isNew: false,
+    },
+    {
+      id: 5,
+      name: "Pingky",
+      description: "Luxury big sofa",
+      price: 10,
+      image: pingky,
+      isNew: true,
+    },
+    {
+      id: 6,
+      name: "Respira",
+      description: "Luxury big sofa",
+      price: 350,
+      image: respira,
+      discount: 30,
+      isNew: false,
+    },
+    {
+      id: 7,
+      name: "Potty",
+      description: "Luxury big sofa",
+      price: 60,
+      image: potty,
+      isNew: true,
     },
   ];
   return (
@@ -67,7 +159,19 @@ export default function Home() {
         </section>
         <section className={styles.productsSection}>
           <h2 className={styles.productHeading}>Our Products</h2>
-          <div className={styles.productsContainer}></div>
+          <div className={styles.productsContainer}>
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                image={product.image}
+                discount={product.discount}
+                isNew={product.isNew}
+              />
+            ))}
+          </div>
           <a href="/shop">
             <button> Show</button>
           </a>
