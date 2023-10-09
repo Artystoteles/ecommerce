@@ -122,6 +122,7 @@ export default function Home() {
       isNew: true,
     },
   ];
+
   return (
     <>
       <div className={styles.homePage}>

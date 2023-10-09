@@ -8,6 +8,7 @@ export { default as share } from "./images/share.svg";
 export { default as compare } from "./images/compare.svg";
 export { default as like } from "./images/like.svg";
 export { default as shopBgc } from "./images/shopBgc.png";
+export { default as product1 } from "./images/products/product1.png";
 //categories
 export { default as Bedroom } from "./images/bedroom.png";
 export { default as Dining } from "./images/dining.png";
