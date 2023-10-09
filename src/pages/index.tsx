@@ -172,9 +172,11 @@ export default function Home() {
               />
             ))}
           </div>
-          <a href="/shop">
-            <button> Show</button>
-          </a>
+
+          <button className={styles.productButton}>
+            {" "}
+            <a href="/shop">Show More</a>
+          </button>
         </section>
         <section className={styles.sliderSection}></section>
         <section className={styles.setupSection}></section>

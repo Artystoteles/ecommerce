@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./ProductCard.module.scss";
 import { StaticImageData } from "next/image";
 import { share, compare, like } from "@/images";
-import { cursorTo } from "readline";
 
 const ProductCard = ({
   name,
@@ -23,6 +22,9 @@ const ProductCard = ({
     <div className={styles.productCard}>
       <div className={styles.productCardActive}>
         <button className={styles.productAddButton}>Add to cart</button>
+        <button className={styles.productAddButton}>
+          <a href="">Details</a>
+        </button>
         <div className={styles.productActionContainer}>
           <button className={styles.productActionButton}>
             <span>
