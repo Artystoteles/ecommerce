@@ -1,0 +1,111 @@
+.productCard {
+  position: relative;
+  width: 20%;
+  margin: 16px;
+  background-color: black;
+  .productCardActive {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 1;
+    .productAddButton,
+    .productActionButton {
+      cursor: pointer;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: white;
+      flex-direction: row;
+      font-size: 16px;
+      font-weight: 700;
+      span {
+        margin-right: 5px;
+      }
+    }
+    .productAddButton {
+      width: 80%;
+      background-color: white;
+      color: #b88e2f;
+      border: 2px solid #b88e2f;
+    }
+  }
+  .productActionContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+.productImageContainer {
+  background-color: #f4f5f7;
+
+  img {
+    width: 100%;
+  }
+}
+.productDiscountBadge,
+.productNewBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  content: "";
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  background-color: #e97171;
+  top: 24px;
+  right: 24px;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px #e97171;
+}
+.productNewBadge {
+  top: 24px;
+  left: 24px;
+  background-color: #2ec1ac;
+  box-shadow: 1px 1px 10px #2ec1ac;
+}
+
+.productFooter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f4f5f7;
+  padding: 16px;
+  color: #3a3a3a;
+  .productPrice {
+    s {
+      color: #b0b0b0;
+    }
+  }
+  .productDescription {
+    color: #898989;
+  }
+}
+
+.productCard:hover {
+  .productImageContainer,
+  .productFooter {
+    opacity: 0.4;
+  }
+  .productCardActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .productAddButton:hover {
+    background-color: #b88e2f;
+    color: white;
+    transition: all 0.2s;
+  }
+}

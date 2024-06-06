@@ -1,0 +1,24 @@
+.productPage {
+  color: black;
+  .productContainer {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .productLeft {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .productPhoto {
+      }
+    }
+    .productRight {
+    }
+  }
+  .productDescriptionContainer {
+    .productDescriptionHeading {
+    }
+    .productDescription {
+    }
+  }
+}

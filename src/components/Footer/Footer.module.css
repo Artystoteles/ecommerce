@@ -1,0 +1,49 @@
+.footerSection {
+  border-top: 1px solid #9f9f9f;
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 100px;
+}
+.footerSection .footerContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.footerSection .footerContainer .footerInformation {
+  width: 35%;
+}
+.footerSection .footerContainer .footerInformation p {
+  color: #9f9f9f;
+}
+.footerSection .footerContainer .footerLinks,
+.footerSection .footerContainer .footerHelp {
+  color: black;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.footerSection .footerContainer .footerSpan {
+  color: #9f9f9f;
+}
+.footerSection .footerContainer .footerLink {
+  margin: 30px 0;
+}
+.footerSection .footerContainer .footerNewsletter {
+  width: 35%;
+}
+.footerSection .footerContainer .footerNewsletter .inputContainer {
+  margin: 20px 0;
+}
+.footerSection .footerContainer .footerNewsletter .inputContainer input {
+  padding: 5px 0;
+  color: black;
+  font-weight: bold;
+  border: none;
+  background: none;
+  border-bottom: 1px solid black;
+  margin: 0 3px;
+}
+.footerSection .footerCopyright {
+  border-top: 1px solid #9f9f9f;
+  padding: 35px 0;
+}/*# sourceMappingURL=Footer.module.css.map */

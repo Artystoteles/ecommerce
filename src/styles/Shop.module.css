@@ -1,0 +1,24 @@
+.shopPage {
+  background-color: #fff;
+  width: 100%;
+}
+.shopPage .shopHero {
+  width: 100%;
+  height: 300px;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shopPage .shopHeading {
+  color: black;
+}
+.shopPage .shopItemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=Shop.module.css.map */
