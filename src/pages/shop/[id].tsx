@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import {
@@ -13,10 +14,9 @@ import {
 import style from "@/styles/ProductPage.module.scss";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import { product1 } from "@/images.js";
 import { StaticImageData } from "next/image";
 
-const productPage = () => {
+const ProductPage = () => {
   type Product = {
     id: number;
     name: string;
@@ -25,8 +25,9 @@ const productPage = () => {
     image: StaticImageData;
     discount?: number | undefined;
     isNew: boolean;
-  }[];
-  const products: Product = [
+  };
+
+  const products: Product[] = [
     {
       id: 0,
       name: "Syltherine",
@@ -164,15 +165,20 @@ const productPage = () => {
       isNew: true,
     },
   ];
-  const [params, setParams] = useState<any>();
-  const searchParams: any = useSearchParams();
 
-  setTimeout(() => {
+  const [params, setParams] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
     const data = searchParams.get("id");
     setParams(data);
-  }, 2000);
+  }, [searchParams]);
 
-  console.log(products[params]);
+  const product = products.find((p) => p.id.toString() === params);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={style.productPage}>
@@ -180,26 +186,22 @@ const productPage = () => {
       <div className={style.productContainer}>
         <div className={style.productLeft}>
           <div className={style.productPhoto}>
-            <img alt="" />
+            <img src={product.image.src} alt={product.name} />
           </div>
         </div>
         <div className={style.productRight}>
-          <h1 className={style.productName}></h1>
-          <p className={style.productPrice}>Rs. 250,000.00</p>
+          <h1 className={style.productName}>{product.name}</h1>
+          <p className={style.productPrice}>${product.price}</p>
           <button className={style.addToCart}>Add To Cart</button>
         </div>
       </div>
       <div className={style.productDescriptionContainer}>
         <h2 className={style.productDescriptionHeading}>Description</h2>
-        <p className={style.productDescription}>
-          Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
-          portable active stereo speaker takes the unmistakable look and sound
-          of Marshall, unplugs the chords, and takes the show on the road.
-        </p>
+        <p className={style.productDescription}>{product.description}</p>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default productPage;
+export default ProductPage;

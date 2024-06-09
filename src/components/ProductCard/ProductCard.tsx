@@ -4,6 +4,7 @@ import { StaticImageData } from "next/image";
 import { share, compare, like } from "@/images";
 
 const ProductCard = ({
+  id,
   name,
   description,
   price,
@@ -11,6 +12,7 @@ const ProductCard = ({
   discount,
   isNew,
 }: {
+  id: number;
   name: string;
   description: string;
   price: number;
@@ -23,7 +25,7 @@ const ProductCard = ({
       <div className={styles.productCardActive}>
         <button className={styles.productAddButton}>Add to cart</button>
         <button className={styles.productAddButton}>
-          <a href="">Details</a>
+          <a href={`/shop/${id}`}>Details</a>
         </button>
         <div className={styles.productActionContainer}>
           <button className={styles.productActionButton}>
