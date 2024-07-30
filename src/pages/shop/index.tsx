@@ -1,6 +1,5 @@
 import React from "react";
 import { StaticImageData } from "next/image";
-
 import style from "@/styles/Shop.module.scss";
 import Navbar from "@/components/Navbar/Navbar";
 import {

@@ -1,14 +1,12 @@
+@import "../../styles/Home.module.scss";
 .Navbar {
+  @include flex($justify: space-around);
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 100%;
   height: 100px;
   top: 0;
   background-color: white;
-  .navLogoContainer {
-  }
+
   .navLinksContainer {
     a {
       margin: 0 30px;
@@ -18,9 +16,7 @@
     }
   }
   .navIconsContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    @include flex($justify: space-evenly);
     button {
       margin: 0 20px;
       background-color: white;

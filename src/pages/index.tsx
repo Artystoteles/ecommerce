@@ -1,5 +1,5 @@
-import { Inter } from "next/font/google";
 import { StaticImageData } from "next/image";
+import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import { hero_image, Bedroom, Dining, Living } from "../images.js";
 import {
@@ -125,6 +125,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Furniro</title>
+        <meta name="robots" content="index, follow" />
+      </Head>
       <div className={styles.homePage}>
         <Navbar />
         <section

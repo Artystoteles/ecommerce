@@ -1,14 +1,12 @@
+@import "../../styles/Home.module.scss";
 .footerSection {
   border-top: 1px solid #9f9f9f;
-
   width: 100%;
   background-color: #fff;
   padding: 40px 100px;
 
   .footerContainer {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    @include flex($align: flex-start);
 
     .footerInformation {
       width: 35%;

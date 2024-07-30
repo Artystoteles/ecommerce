@@ -1,3 +1,4 @@
+@import "../../styles/Home.module.scss";
 .productCard {
   position: relative;
   width: 20%;
@@ -13,11 +14,9 @@
     z-index: 1;
     .productAddButton,
     .productActionButton {
+      @include flex();
       cursor: pointer;
       padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: none;
       border: none;
       color: white;
@@ -36,10 +35,8 @@
     }
   }
   .productActionContainer {
+    @include flex($justify: space-evenly);
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
   }
 }
 .productImageContainer {
@@ -51,9 +48,7 @@
 }
 .productDiscountBadge,
 .productNewBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex();
   color: white;
   content: "";
   position: absolute;
@@ -73,10 +68,7 @@
 }
 
 .productFooter {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
+  @include flex(flex-start, flex-start, column);
   gap: 10px;
   background-color: #f4f5f7;
   padding: 16px;
@@ -97,10 +89,7 @@
     opacity: 0.4;
   }
   .productCardActive {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: 24px;
   }
   .productAddButton:hover {
