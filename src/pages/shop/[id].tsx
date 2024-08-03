@@ -1,5 +1,6 @@
-"use client";
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
+
 import { useParams, useSearchParams } from "next/navigation";
 import {
   grifo,
@@ -181,26 +182,32 @@ const ProductPage = () => {
   }
 
   return (
-    <div className={style.productPage}>
-      <Navbar />
-      <div className={style.productContainer}>
-        <div className={style.productLeft}>
-          <div className={style.productPhoto}>
-            <img src={product.image.src} alt={product.name} />
+    <>
+      <Head>
+        <title>{product.name} | Furniro</title>
+      </Head>
+      <div className={style.productPage}>
+        <Navbar />
+        <div className={style.productContainer}>
+          <div className={style.productLeft}>
+            <div className={style.productPhoto}>
+              <img src={product.image.src} alt={product.name} />
+            </div>
+          </div>
+          <div className={style.productRight}>
+            <h1 className={style.productName}>{product.name}</h1>
+            <p className={style.productPrice}>${product.price}</p>
+
+            <button className={style.addToCart}>Add To Cart</button>
           </div>
         </div>
-        <div className={style.productRight}>
-          <h1 className={style.productName}>{product.name}</h1>
-          <p className={style.productPrice}>${product.price}</p>
-          <button className={style.addToCart}>Add To Cart</button>
+        <div className={style.productDescriptionContainer}>
+          <h2 className={style.productDescriptionHeading}>Description</h2>
+          <p className={style.productDescription}>{product.description}</p>
         </div>
+        <Footer />
       </div>
-      <div className={style.productDescriptionContainer}>
-        <h2 className={style.productDescriptionHeading}>Description</h2>
-        <p className={style.productDescription}>{product.description}</p>
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
